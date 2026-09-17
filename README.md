@@ -249,3 +249,16 @@ Développé dans le cadre du stage **Prodigy InfoTech — Task 04**.
 ## Licence
 
 MIT
+
+## Démarrage persistant local
+
+Depuis la racine du dépôt, après installation des dépendances backend et frontend :
+
+~~~bash
+./scripts/start-persistent.sh
+# Frontend : http://localhost:5173
+# Backend : http://localhost:5000
+./scripts/stop-persistent.sh
+~~~
+
+Le script démarre MongoDB via Docker Compose lorsqu'il est disponible, puis conserve les journaux dans `logs/`. Les fichiers `.runtime/` et `logs/` sont locaux et ne doivent pas être commités. Les secrets restent dans `backend/.env`.
